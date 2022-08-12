@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="webstyle.css" rel="stylesheet">
+    <meta charset="UFT-8" content="width = device-width, initial-scale=1">
+    <script defer src="website.js"></script>
+    <title>Nz Birds</title>
+</head>
+
+<body>
+    <header>NZ Birds</header>
+
+    <main>
+        <nav>
+            <h2>Filter Birds</h2>
+            <form>
+                <p>Sort By:(UNFINISHED)</p>
+                <select name="sort" id="sort">
+                    <option value="Alphabetical" selected>Alphabetical</option>
+                    <option value="Length(Tallest)">Length(Tallest)</option>
+                    <option value="Lenght(Shortest)">Lenght(Shortest)</option>
+                    <option value="Weight(Heaviest)">Weight(Heaviest)</option>
+                    <option value="Weight(Lightest)">Weight(Lightest)</option>
+                </select>
+
+                <p>Search By:</p>
+                <select name="info" id="info" onchange="searchFunc()">
+                    <option value="English Name">English Name</option>
+                    <option value="Maori Name" selected>Maori Name</option>
+                    <option value="Scientific Name">Scientific Name</option>
+                    <option value="Order">Order</option>
+                </select>
+
+                <p>Conservation Status</p>
+                <select name="status" id="status" onchange="searchFunc()">
+                    <option selected>Select Status</option>
+                    <option value="NT">Not Threatened</option>
+                    <option value="NU">Naturally Uncommon</option>
+                    <option value="R">Relicit</option>
+                    <option value="Re">Recovering</option>
+                    <option value="D">Declining</option>
+                    <option value="NI">Nationally Increasing</option>
+                    <option value="NV">Nationally Vulnerable</option>
+                    <option value="NE">Nationally Endangered</option>
+                    <option value="NC">Nationally Critical</option>
+                    <option value="DD">Data Deficient</option>
+                </select>
+                <p><input type="text" id="search_bar" placeholder="Enter Bird" onkeyup="searchFunc()"></p>
+            </form>
+
+
+            <div id="conserv">
+                <div>
+                    <h2>Conservation Status</h2>
+                    <p><span id="NT"></span>Not Threatened</p>
+                    <p><span id="NU"></span>Naturally Uncommon</p>
+                    <p><span id="R"></span>Relicit</p>
+                    <p><span id="Re"></span>Recovering</p>
+                    <p><span id="D"></span>Declining</p>
+                    <p><span id="NI"></span>Nationally Increasing</p>
+                    <p><span id="NV"></span>Nationally Vulnerable</p>
+                    <p><span id="NE"></span>Nationally Endangered</p>
+                    <p><span id="NC"></span>Nationally Critical</p>
+                    <p><span id="DD"></span>Data Deficient</p>
+                </div>
+            </div>
+
+
+
+
+
+        </nav>
+        <div id="panels">
+
+
+        </div>
+
+    </main>
+    <footer>
+        <p>Copyright © 2019 <a href=https://www.birdsnz.org.nz>Ornithological Society of New Zealand</a> </p>
+    </footer>
+</body>
