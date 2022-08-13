@@ -5,19 +5,20 @@ async function func() {
 
     for (i = 0; i < birds.length; i++) {
 
-        let div = document.createElement('div');
-        let h1 = document.createElement('h1');
-        let h3 = document.createElement('h3');
-        let p = document.createElement('p');
-        let circle = document.createElement('div');
+        let div = document.createElement('div');        // main bird cards
+        let h1 = document.createElement('h1');          // Maori bird name heading
+        let h3 = document.createElement('h3');          // English name top right
+        let p = document.createElement('p');            // photo credit
+        let circle = document.createElement('div');     // circle for conservation status top left
+        let table = document.createElement('table');    // table of bird info bottom of card
         let parent = document.querySelector('#panels');
-        let src = birds[i].photo.source;
-        let table = document.createElement('table');
+
         circle.setAttribute('class', 'circle');
         p.setAttribute("class", "credit");
         h1.setAttribute("class", "name");
         div.setAttribute("class", "cards");
         //add bird image to panels
+        let src = birds[i].photo.source;
         div.innerHTML = "<img src =" + src + " alt =" + birds[i].primary_name + "/>"
         //add credits
         p.innerHTML = "Credit: " + birds[i].photo.credit;
@@ -80,16 +81,16 @@ function searchFunc() {
 
     let input = document.querySelector("#search_bar");
     let filter = input.value.toUpperCase(); // get textfield input
-    let list = document.getElementsByClassName("cards");
+    let list = document.getElementsByClassName("cards"); // list of all bird cards
     let count = 0;
 
     for (let i = 0; i < list.length; i++) {
 
-        list[i].style.display = '';
+
 
 
         let e = document.getElementById('info');
-        let value = e.value;
+        let value = e.value; // value of 'search by' drop down menu
 
 
 
@@ -154,6 +155,7 @@ function searchFunc() {
 
 
     }
+    // if no cards are visable add no result text
     if (count == 0) {
         document.getElementById('no_result').innerHTML = "No Results Found!";
     } else {
