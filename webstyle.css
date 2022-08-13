@@ -56,7 +56,7 @@ footer {
 .cards {
     flex: 0 0 200px;
     margin: 10px;
-    max-height: 440px;
+    max-height: 460px;
     border: 2px solid;
     box-shadow: 3px 3px 8px 0px rgb(53, 52, 52);
     position: relative;
@@ -152,7 +152,7 @@ p>span {
 
 .credit {
     position: absolute;
-    bottom: 130px;
+    bottom: 150px;
     left: 10px;
     color: azure;
     font-size: 12px;
@@ -218,7 +218,8 @@ td {
 .sci,
 .ord,
 .length,
-.weight {
+.weight,
+.family {
     font-weight: 100;
 }
 
