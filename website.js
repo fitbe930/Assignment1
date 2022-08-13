@@ -32,8 +32,8 @@ async function func() {
         table.innerHTML = "<tr><td> Scientific Name: <td><td class = 'sci'>" + birds[i].scientific_name
             + "</td></tr><tr><td> Order: <td><td class = 'ord'>" + birds[i].order
             + "</td></tr><tr><td> Family: <td><td class = 'family'>" + birds[i].family
-            + "</td></tr><tr><td> Length: <td><td class = 'length'>" + birds[i].size.length.value + birds[i].size.length.units
-            + "</td></tr><tr><td> Weight: <td><td class = 'weight'>" + birds[i].size.weight.value + birds[i].size.weight.units + "</td></tr>"
+            + "</td></tr><tr><td> Length: <td><td class = 'length'>" + birds[i].size.length.value + birds[i].size.length.units + " (" + (birds[i].size.length.value / 2.54).toFixed(1) + " in)"
+            + "</td></tr><tr><td> Weight: <td><td class = 'weight'>" + birds[i].size.weight.value + birds[i].size.weight.units + " (" + (birds[i].size.weight.value / 28.35).toFixed(1) + " oz) </td></tr>"
 
 
         div.append(p);      // photo credit
