@@ -3,13 +3,6 @@ async function func() {
     let response = await fetch("./nzbird.json");
     let birds = await response.json();
 
-    let e = document.getElementById('sort');
-    let value = e.value;
-    if (value == "Lenght(Shortest)") {
-        birds.sort((a, b) => a.size.length.value - a.size.length.value);
-    };
-    //alert(value);
-
     for (i = 0; i < birds.length; i++) {
 
         let div = document.createElement('div');
@@ -26,13 +19,16 @@ async function func() {
         div.setAttribute("class", "cards");
         //add bird image to panels
         div.innerHTML = "<img src =" + src + " alt =" + birds[i].primary_name + "/>"
+        //add credits
         p.innerHTML = "Credit: " + birds[i].photo.credit;
+        //add maori name
         h1.innerHTML = birds[i].primary_name;
+        //add english name
         h3.innerHTML = birds[i].english_name;
-        weight_pds =
 
-            // create table of bird info to panels
-            table.innerHTML = "<tr><td> Scientific Name: <td><td class = 'sci'>" + birds[i].scientific_name
+
+        // create table of bird info to panels
+        table.innerHTML = "<tr><td> Scientific Name: <td><td class = 'sci'>" + birds[i].scientific_name
             + "</td></tr><tr><td> Order: <td><td class = 'ord'>" + birds[i].order
             + "</td></tr><tr><td> Length: <td><td class = 'length'>" + birds[i].size.length.value + birds[i].size.length.units
             + "</td></tr><tr><td> Weight: <td><td class = 'weight'>" + birds[i].size.weight.value + birds[i].size.weight.units + "</td></tr>";
@@ -69,7 +65,7 @@ async function func() {
 
 
         }
-        //alert(circle.style.backgroundColor);
+
     }
 }
 func();
@@ -83,13 +79,17 @@ function searchFunc() {
     let input = document.querySelector("#search_bar");
     let filter = input.value.toUpperCase(); // get textfield input
     let list = document.getElementsByClassName("cards");
+    let count = 0;
 
     for (let i = 0; i < list.length; i++) {
 
+        list[i].style.display = '';
 
 
         let e = document.getElementById('info');
         let value = e.value;
+
+
 
 
         // change b depending on 'search by' selection
@@ -105,26 +105,58 @@ function searchFunc() {
         }
 
 
+        let goal_col = ""
+        let stat = document.getElementById('status');
+        let stat_val = stat.value;
+        let circ_col = list[i].getElementsByClassName('circle')[0].style.backgroundColor;
 
-        let f = document.getElementById('status');
-        let value2 = f.value;
-
-        if (value == "NT") {
-
+        //sets goal_col to the correct conservation status colour
+        if (stat_val == "NT") {
+            goal_col = "rgb(2, 160, 40)";
+        } else if (stat_val == "NU") {
+            goal_col = "rgb(100, 154, 49)";
+        } else if (stat_val == "R") {
+            goal_col = "rgb(153, 203, 104)";
+        } else if (stat_val == "Re") {
+            goal_col = "rgb(254, 204, 51)";
+        } else if (stat_val == "D") {
+            goal_col = "rgb(254, 154, 1)";
+        } else if (stat_val == "NI") {
+            goal_col = "rgb(194, 105, 103)";
+        } else if (stat_val == "NV") {
+            goal_col = "rgb(155, 0, 0)";
+        } else if (stat_val == "NE") {
+            goal_col = "rgb(102, 0, 50)";
+        } else if (stat_val == "NC") {
+            goal_col = "rgb(50, 0, 51)";
+        } else if (stat_val == "DD") {
+            goal_col = "black";
+        } else if (stat_val == "empty") {
+            goal_col = circ_col;
         }
 
 
-        let c = b.innerHTML.toUpperCase().normalize("NFD").replace(/\p{Diacritic}/gu, "") //ignores any special maori characters
+        let c = b.innerHTML.toUpperCase().normalize("NFD").replace(/\p{Diacritic}/gu, ""); //ignores any special maori characters
 
-
-        if (c.indexOf(filter) > -1) {
-            list[i].style.display = ''
+        // hide cards if they dont contain search string and conservation colour is wrong
+        if (c.indexOf(filter) > -1 && circ_col == goal_col) {
+            list[i].style.display = '';
+            count = count + 1;
         } else {
             list[i].style.display = 'none';
+
         }
+
+
 
 
     }
+    if (count == 0) {
+        document.getElementById('no_result').innerHTML = "No Results Found!";
+    } else {
+        document.getElementById('no_result').innerHTML = "";
+    }
+
 
 }
 

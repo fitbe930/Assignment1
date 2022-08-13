@@ -28,12 +28,10 @@ nav {
     background: beige;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
     font-size: 12px;
-}
-
-nav {
     padding: 1em;
     position: relative;
 }
+
 
 footer {
     padding: 1em;
@@ -62,6 +60,7 @@ footer {
     border: 2px solid;
     box-shadow: 3px 3px 8px 0px rgb(53, 52, 52);
     position: relative;
+    background-color: beige;
 
 }
 
@@ -71,8 +70,6 @@ footer {
     align-items: stretch;
     padding-left: 3.5em;
     justify-content: center;
-
-
 
 
 }
@@ -123,7 +120,7 @@ h2 {
 h1 {
     font-size: 20px;
     padding-left: 10px;
-    border-bottom: 1px solid rgb(187, 182, 182);
+
 }
 
 table {
@@ -136,7 +133,7 @@ h3 {
     position: absolute;
     top: 0px;
     right: 16px;
-    color: aliceblue;
+    color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-size: 14px;
 }
@@ -165,47 +162,66 @@ p>span {
 }
 
 #NT {
-    background: #02a028;
+    background: rgb(2, 160, 40);
 }
 
 #NU {
-    background: #649a31;
+    background: rgb(100, 154, 49);
 }
 
 #R {
-    background: #99cb68;
+    background: rgb(153, 203, 104);
 }
 
 #Re {
-    background: #fecc33;
+    background: rgb(254, 204, 51);
 }
 
 #D {
-    background: #fe9a01;
+    background: rgb(254, 154, 1);
 }
 
 #NI {
-    background: #c26967;
+    background: rgb(194, 105, 103);
 }
 
 #NV {
-    background: #9b0000;
+    background: rgb(155, 0, 0);
 }
 
 #NE {
-    background: #660032;
+    background: rgb(102, 0, 50);
 }
 
 #NC {
-    background: #320033;
+    background: rgb(50, 0, 51);
 }
 
 #DD {
-    background: black;
+    background: rgb(0, 0, 0);
 }
 
 #conserv {
     padding-top: 10px;
     position: sticky;
     top: 0;
+}
+
+span {
+    border: 1px solid;
+}
+
+td {
+    font-weight: bold;
+}
+
+.sci,
+.ord,
+.length,
+.weight {
+    font-weight: 100;
+}
+
+#no_result {
+    padding-top: 2em;
 }

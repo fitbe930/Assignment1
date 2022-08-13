@@ -3,7 +3,7 @@
 
 <head>
     <link href="webstyle.css" rel="stylesheet">
-    <meta charset="UFT-8" content="width = device-width, initial-scale=1">
+    <meta charset="UFT-8" content="width = device-width, initial-scale=1.0">
     <script defer src="website.js"></script>
     <title>Nz Birds</title>
 </head>
@@ -15,26 +15,10 @@
         <nav>
             <h2>Filter Birds</h2>
             <form>
-                <p>Sort By:(UNFINISHED)</p>
-                <select name="sort" id="sort">
-                    <option value="Alphabetical" selected>Alphabetical</option>
-                    <option value="Length(Tallest)">Length(Tallest)</option>
-                    <option value="Lenght(Shortest)">Lenght(Shortest)</option>
-                    <option value="Weight(Heaviest)">Weight(Heaviest)</option>
-                    <option value="Weight(Lightest)">Weight(Lightest)</option>
-                </select>
 
-                <p>Search By:</p>
-                <select name="info" id="info" onchange="searchFunc()">
-                    <option value="English Name">English Name</option>
-                    <option value="Maori Name" selected>Maori Name</option>
-                    <option value="Scientific Name">Scientific Name</option>
-                    <option value="Order">Order</option>
-                </select>
-
-                <p>Conservation Status</p>
+                <p>Conservation Status:</p>
                 <select name="status" id="status" onchange="searchFunc()">
-                    <option selected>Select Status</option>
+                    <option value="empty" selected>Select Status</option>
                     <option value="NT">Not Threatened</option>
                     <option value="NU">Naturally Uncommon</option>
                     <option value="R">Relicit</option>
@@ -46,7 +30,17 @@
                     <option value="NC">Nationally Critical</option>
                     <option value="DD">Data Deficient</option>
                 </select>
-                <p><input type="text" id="search_bar" placeholder="Enter Bird" onkeyup="searchFunc()"></p>
+
+                <p>Search By:</p>
+                <select name="info" id="info" onchange="searchFunc()">
+                    <option value="Maori Name" selected>Maori Name</option>
+                    <option value="English Name">English Name</option>
+                    <option value="Scientific Name">Scientific Name</option>
+                    <option value="Order">Order</option>
+                </select>
+
+                <p>Search</p>
+                <input type="text" id="search_bar" placeholder="Enter Bird" onkeyup="searchFunc()">
             </form>
 
 
@@ -66,15 +60,11 @@
                 </div>
             </div>
 
-
-
-
-
         </nav>
         <div id="panels">
 
-
         </div>
+        <div id="no_result"></div>
 
     </main>
     <footer>
