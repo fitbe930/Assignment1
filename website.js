@@ -1,7 +1,11 @@
 
 async function func() {
-    let response = await fetch("./nzbird.json");
-    let birds = await response.json();
+    const response = await fetch("./nzbird.json");
+    if (!response.ok) {
+        console.error(response.status);
+    }
+    const birds = await response.json();
+
 
     for (i = 0; i < birds.length; i++) {
 
